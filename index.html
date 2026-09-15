@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMember Pro - Firebase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <style>
+        .hidden { display: none !important; }
+        :root { color-scheme: dark; }
+        html { overflow-x: hidden; }
+        body { background: #07111f; color: #f1f5f9; font-family: "Manrope", sans-serif; overflow-x: hidden; }
+        #appContent, #appContent > * { min-width: 0; }
+        img, canvas, svg { max-width: 100%; }
+        input, select, button { max-width: 100%; }
+        body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 80% 0%, rgba(16,185,129,.12), transparent 34rem), radial-gradient(circle at 0% 80%, rgba(14,165,233,.08), transparent 30rem); z-index: -1; }
+        .font-mono { font-family: "DM Mono", monospace; }
+        button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #34d399; outline-offset: 2px; }
+        @media (prefers-reduced-motion: no-preference) { button { transition: transform .18s ease, background-color .18s ease, color .18s ease; } button:hover { transform: translateY(-1px); } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+    <header id="topNavbar" class="hidden min-h-16 border-b border-slate-800 bg-slate-900/80 px-4 py-3 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sticky top-0 z-50 backdrop-blur-md">
+        <div class="flex items-center gap-3"><span class="text-lg sm:text-xl font-bold tracking-wide text-emerald-400">SmartMember</span><span id="userRoleBadge" class="rounded bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-400 border border-emerald-500/20 uppercase">ROLE</span></div>
+        <div class="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end"><div class="min-w-0 text-left sm:text-right"><p id="navUserName" class="truncate text-sm font-semibold text-slate-200">User Name</p><p id="navUserEmail" class="max-w-[210px] truncate text-xs text-slate-400">user@mail.com</p></div><button id="btnLogout" class="shrink-0 px-3 py-1.5 bg-rose-500/10 text-rose-400 border border-rose-500/20 hover:bg-rose-500 hover:text-white rounded-lg text-sm transition-all"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></div>
+    </header>
+    <main id="appContent" class="flex-1 p-4 md:p-6 max-w-7xl mx-auto w-full"></main>
+    <script type="module" src="assets/js/component-loader.js"></script>
+</body>
+</html>

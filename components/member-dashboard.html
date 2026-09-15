@@ -1,0 +1,17 @@
+<div id="memberDashboard" class="hidden space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-1 space-y-4">
+            <h2 class="text-lg font-bold text-slate-200"><i class="fa-solid fa-id-card text-emerald-400"></i> Kartu Member Digital</h2>
+            <div class="mb-2 flex items-center justify-between rounded-xl border border-emerald-500/20 bg-slate-900 px-4 py-3"><span class="text-xs font-bold uppercase tracking-wider text-slate-400">Saldo poin</span><strong id="cardPoints" class="text-xl font-black text-emerald-300">0 Poin</strong></div>
+            <div id="memberCardVisual" class="relative aspect-[1.586/1] w-full max-w-[620px] rounded-2xl p-5 border border-emerald-500/30 shadow-2xl overflow-hidden">
+                <div class="flex justify-between items-start mb-6"><div><h3 class="text-lg font-black tracking-wider text-emerald-400">SMARTMEMBER</h3><p class="text-[9px] text-slate-400 tracking-widest uppercase">VIP MEMBER CARD</p></div></div>
+                <div class="flex justify-between items-end"><div class="space-y-2"><p id="cardMemberId" class="font-mono text-sm tracking-widest font-bold text-white">MB-000000</p><p id="cardName" class="text-sm font-semibold text-slate-100 uppercase">-------------</p></div><div class="flex items-center justify-center rounded-xl border-4 border-white bg-white p-2 shadow-lg"><div id="qrcode"></div></div></div>
+            </div>
+            <button id="btnDownloadCard" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-download"></i> Download Member Card (PNG)</button>
+        </div>
+        <div class="md:col-span-2 space-y-4">
+            <h2 class="text-lg font-bold text-slate-200"><i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Riwayat Transaksi &amp; Poin</h2>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 overflow-x-auto"><table class="w-full text-left text-sm text-slate-300"><thead class="bg-slate-800/50 text-slate-400 uppercase text-[11px]"><tr><th class="p-3">Tanggal</th><th class="p-3">Barang / Deskripsi</th><th class="p-3">Total Harga</th><th class="p-3">Poin Didapat</th></tr></thead><tbody id="tblMemberTransactions" class="divide-y divide-slate-800"><tr><td colspan="4" class="p-4 text-center text-slate-500">Belum ada riwayat transaksi.</td></tr></tbody></table></div>
+        </div>
+    </div>
+</div>
