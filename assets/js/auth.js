@@ -96,7 +96,17 @@ function clearDashboard() {
 async function getOrCreateProfile(user, fullName = user.displayName || "Member") {
     const userRef = doc(db, "users", user.uid);
     const profileSnapshot = await getDoc(userRef);
-    if (profileSnapshot.exists()) return profileSnapshot.data();
+
+    if (profileSnapshot.exists()) {
+        const existing = profileSnapshot.data();
+        await setDoc(userRef, {
+            fullName: fullName || existing.fullName,
+            email: user.email || (existing.email || ""),
+            points: existing.points,
+            tier: existing.tier || "SILVER",
+        }, { merge: true });
+        return { ...existing, fullName: fullName || existing.fullName };
+    }
 
     const profile = {
         uid: user.uid,

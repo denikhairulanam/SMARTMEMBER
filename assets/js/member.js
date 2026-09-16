@@ -30,6 +30,7 @@ function renderMemberCard(profile) {
     document.getElementById("cardPoints").textContent = `${profile.points || 0} Poin`;
 
     const qrContainer = document.getElementById("qrcode");
+    qrContainer.style.cssText = "background-color: #ffffff; padding: 12px; border-radius: 12px; display: inline-flex;";
     qrContainer.replaceChildren();
     if (window.QRCode && profile.memberId) {
         new window.QRCode(qrContainer, {
