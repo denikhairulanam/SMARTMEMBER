@@ -20,6 +20,8 @@ const elements = {
     memberDashboard: document.getElementById("memberDashboard"),
     adminDashboard: document.getElementById("adminDashboard"),
     topNavbar: document.getElementById("topNavbar"),
+    navUserBox: document.getElementById("navUserBox"),
+    btnHeaderAuth: document.getElementById("btnHeaderAuth"),
     formLogin: document.getElementById("formLogin"),
     formRegister: document.getElementById("formRegister"),
     tabLogin: document.getElementById("tabLogin"),
@@ -58,20 +60,24 @@ function switchAuthTab(tab) {
     elements.formLogin.classList.toggle("hidden", !login);
     elements.formRegister.classList.toggle("hidden", login);
     elements.tabLogin.className = login
-        ? "flex-1 py-2 text-center font-bold text-emerald-400 border-b-2 border-emerald-400"
-        : "flex-1 py-2 text-center font-bold text-slate-400 hover:text-white";
+        ? "flex-1 py-2 text-center font-bold text-[#1C130E] border-b-2 border-[#D96C33]"
+        : "flex-1 py-2 text-center font-bold text-[#1C130E]/50 hover:text-[#1C130E]";
     elements.tabRegister.className = login
-        ? "flex-1 py-2 text-center font-bold text-slate-400 hover:text-white"
-        : "flex-1 py-2 text-center font-bold text-emerald-400 border-b-2 border-emerald-400";
+        ? "flex-1 py-2 text-center font-bold text-[#1C130E]/50 hover:text-[#1C130E]"
+        : "flex-1 py-2 text-center font-bold text-[#1C130E] border-b-2 border-[#D96C33]";
 }
 
 function showDashboard(user, profile) {
     const role = profile.role === "admin" ? "admin" : "member";
+    const homePage = document.getElementById("homePage");
+    if (homePage) homePage.classList.add("hidden");
     elements.authContainer.classList.add("hidden");
-    elements.topNavbar.classList.remove("hidden");
+    elements.navUserBox.classList.remove("hidden");
+    elements.btnHeaderAuth.classList.add("hidden");
+    elements.logout.classList.remove("hidden");
     elements.memberDashboard.classList.toggle("hidden", role !== "member");
     elements.adminDashboard.classList.toggle("hidden", role !== "admin");
-    elements.navName.textContent = profile.fullName || user.displayName || "Member";
+    elements.navName.textContent = profile.fullName || user.displayName || "Warga Warkop";
     elements.navEmail.textContent = user.email || "";
     elements.roleBadge.textContent = role;
 
@@ -87,8 +93,12 @@ function showDashboard(user, profile) {
 function clearDashboard() {
     stopMemberDashboard();
     stopAdminDashboard();
-    elements.authContainer.classList.remove("hidden");
-    elements.topNavbar.classList.add("hidden");
+    const homePage = document.getElementById("homePage");
+    if (homePage) homePage.classList.remove("hidden");
+    elements.authContainer.classList.add("hidden");
+    elements.navUserBox.classList.add("hidden");
+    elements.btnHeaderAuth.classList.remove("hidden");
+    elements.logout.classList.add("hidden");
     elements.memberDashboard.classList.add("hidden");
     elements.adminDashboard.classList.add("hidden");
 }

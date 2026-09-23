@@ -1,17 +1,20 @@
 <div id="memberDashboard" class="hidden space-y-6">
+    <div class="rounded-[24px] border border-[#2a1a0e]/10 bg-[#1C130E] p-5 sm:p-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#D96C33] text-white text-lg"><i class="fa-solid fa-mug-hot"></i></span><div><h2 class="text-lg font-black text-[#FFF8EC]">Halo, warga WARKOP! ☕</h2><p class="text-xs text-white/60">Tunjukin QR ini ke kasir tiap pesan — poin langsung masuk.</p></div></div>
+        <div class="flex items-center gap-2 rounded-2xl bg-[#FFF8EC] px-4 py-2.5"><span class="text-[11px] font-bold tracking-widest text-[#1C130E]/50">SALDO</span><strong id="cardPoints" class="text-xl font-black text-[#D96C33]">0 Poin</strong></div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="md:col-span-1 space-y-4">
-            <h2 class="text-lg font-bold text-slate-200"><i class="fa-solid fa-id-card text-emerald-400"></i> Kartu Member Digital</h2>
-            <div class="mb-2 flex items-center justify-between rounded-xl border border-emerald-500/20 bg-slate-900 px-4 py-3"><span class="text-xs font-bold uppercase tracking-wider text-slate-400">Saldo poin</span><strong id="cardPoints" class="text-xl font-black text-emerald-300">0 Poin</strong></div>
-            <div id="memberCardVisual" class="relative aspect-[1.586/1] w-full max-w-[620px] rounded-2xl p-5 border border-emerald-500/30 shadow-2xl overflow-hidden">
-                <div class="flex justify-between items-start mb-6"><div><h3 class="text-lg font-black tracking-wider text-emerald-400">SMARTMEMBER</h3><p class="text-[9px] text-slate-400 tracking-widest uppercase">VIP MEMBER CARD</p></div></div>
+            <h2 class="text-sm font-black tracking-widest text-[#1C130E]/60"><i class="fa-solid fa-id-card text-[#D96C33]"></i> KARTU NGOPI DIGITAL</h2>
+            <div id="memberCardVisual" class="relative aspect-[1.586/1] w-full max-w-[620px] rounded-2xl p-5 border border-[#2a1a0e]/20 shadow-2xl overflow-hidden bg-[#1C130E]">
+                <div class="flex justify-between items-start mb-6"><div><h3 class="text-lg font-black tracking-[0.14em] text-[#FFF8EC]">WARKOP</h3><p class="text-[9px] text-[#C9A67A] tracking-[0.22em] uppercase">Kartu Ngopi · VIP</p></div></div>
                 <div class="flex justify-between items-end"><div class="space-y-2"><p id="cardMemberId" class="font-mono text-sm tracking-widest font-bold text-white">MB-000000</p><p id="cardName" class="text-sm font-semibold text-slate-100 uppercase">-------------</p></div><div class="flex items-center justify-center rounded-xl border-4 border-white bg-white p-2 shadow-lg"><div id="qrcode"></div></div></div>
             </div>
-            <button id="btnDownloadCard" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-download"></i> Download Member Card (PNG)</button>
+            <button id="btnDownloadCard" class="w-full py-3 bg-[#1C130E] hover:bg-black text-[#FFF8EC] rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-download text-[#C9A67A]"></i> Download Kartu (PNG)</button>
         </div>
         <div class="md:col-span-2 space-y-4">
-            <h2 class="text-lg font-bold text-slate-200"><i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Riwayat Transaksi &amp; Poin</h2>
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 overflow-x-auto"><table class="w-full text-left text-sm text-slate-300"><thead class="bg-slate-800/50 text-slate-400 uppercase text-[11px]"><tr><th class="p-3">Tanggal</th><th class="p-3">Barang / Deskripsi</th><th class="p-3">Total Harga</th><th class="p-3">Poin Didapat</th></tr></thead><tbody id="tblMemberTransactions" class="divide-y divide-slate-800"><tr><td colspan="4" class="p-4 text-center text-slate-500">Belum ada riwayat transaksi.</td></tr></tbody></table></div>
+            <h2 class="text-sm font-black tracking-widest text-[#1C130E]/60"><i class="fa-solid fa-clock-rotate-left text-[#D96C33]"></i> RIWAYAT NGOPI &amp; POIN</h2>
+            <div class="bg-white border border-[#2a1a0e]/10 rounded-2xl p-4 overflow-x-auto shadow-sm"><table class="w-full text-left text-sm text-[#1C130E]"><thead class="bg-[#FFF0D6] text-[#1C130E]/60 uppercase text-[11px]"><tr><th class="p-3 rounded-l-lg">Tanggal</th><th class="p-3">Menu / Deskripsi</th><th class="p-3">Total</th><th class="p-3 rounded-r-lg">Poin</th></tr></thead><tbody id="tblMemberTransactions" class="divide-y divide-[#1C130E]/5"><tr><td colspan="4" class="p-4 text-center text-[#1C130E]/40">Belum ada riwayat. Yuk ngopi dulu!</td></tr></tbody></table></div>
         </div>
     </div>
 </div>
